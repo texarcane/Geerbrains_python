@@ -19,3 +19,13 @@
 6-й день: 3,22
 Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.
 """
+
+number = float(input('First day result, km: '))
+finish = float(input('Desired result per day, km: '))
+gains = float(input('Daily distance gain, %: '))
+day = 1
+while number < finish:
+    print(f'{day} day: {number:1.2f} km')
+    number = round(number*(1+gains/100), 2)
+    day += 1
+print(f'{day} day: {number:1.2f} km  \nAnswer: Result of {finish:1.2f} km per day would be achieved on {day} day.')
