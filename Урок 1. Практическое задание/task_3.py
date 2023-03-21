@@ -9,7 +9,9 @@
 n + nn + nnn = 369
 """
 
-num_input = int(input('Greetings! Give me positive integer: \n'))
-n = int(num_input)
-sum_input = int(n*1+n*11+n*111)
-print(f'n+nn+nnn sum is {sum_input}')
+num = int(input('Greetings! Give me positive integer n: \n'))
+n = int("%s" % num)
+nn = int("%s%s" % (num, num))
+nnn = int("%s%s%s" % (num, num, num))
+n_sum = int(n+nn+nnn)
+print(f'Sum of n+nn+nnn is {n}+{nn}+{nnn} = {n_sum}')
