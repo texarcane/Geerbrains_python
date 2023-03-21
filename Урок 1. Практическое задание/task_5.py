@@ -22,8 +22,10 @@
 sales = float(input('Greetings! Enter the sales: '))
 costs = float(input('Please enter the costs: '))
 profit = round(sales-costs, 2)
-if profit <= 0:
-    print(f'Firm has earned no profit: {profit}')
+if profit < 0:
+    print(f'Firm has losses: {profit}')
+elif profit == 0:
+    print(f'Firm has earned no profit.')
 else:
     print(f'Firm has earned the profit: {profit:1.2f}')
     print(f'Return on sales: {profit/sales:1.2f}')
