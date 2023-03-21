@@ -18,3 +18,14 @@
 Введите численность сотрудников фирмы: 10
 Прибыль фирмы в расчете на одного сотрудника = 50.0
 """
+
+sales = float(input('Greetings! Enter the sales: '))
+costs = float(input('Please enter the costs: '))
+profit = round(sales-costs, 2)
+if profit <= 0:
+    print(f'Firm has earned no profit: {profit}')
+else:
+    print(f'Firm has earned the profit: {profit:1.2f}')
+    print(f'Return on sales: {profit/sales:1.2f}')
+    employees = int(input('Please enter the number of employees: '))
+    print(f'Profit per employee: {profit/employees:1.2f}')
