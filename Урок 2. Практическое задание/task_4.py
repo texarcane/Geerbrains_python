@@ -14,3 +14,13 @@
 1. раз
 2. перерефриж
 """
+
+list_1 = input('Enter words divided by space: ').split()
+a = 1
+for w in list_1:
+    if len(w) > 10:
+        print(f'{a}. {w[:10]}')
+    else:
+        print(f'{a}. {w}')
+    a += 1
+print()
