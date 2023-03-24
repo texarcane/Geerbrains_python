@@ -11,3 +11,13 @@
 Введите целые числа через пробел: 1 2 3
 Результат: 2 1 3
 """
+
+list_1 = input('Print integers divided by space: ').split(' ')
+a = 0
+length = len(list_1)
+
+while a < (length - 1):
+    list_1[a], list_1[a + 1] = list_1[a + 1], list_1[a]
+    a += 2
+
+print('Resulting list:', *list_1)
