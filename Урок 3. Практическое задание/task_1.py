@@ -17,3 +17,18 @@ Process finished with exit code 0
 
 Process finished with exit code 0
 """
+
+
+def division(n1, n2):
+
+    try:
+        print(float(n1) / float(n2))
+    except ZeroDivisionError:
+        print('Cant divide by zero!')
+    except TypeError:
+        print('Wrong data type!')
+    except ValueError:
+        print('Wrong data!')
+
+
+division(n1=input('First number: '), n2=input('Second number: '))

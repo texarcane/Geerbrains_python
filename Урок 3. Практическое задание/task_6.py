@@ -8,3 +8,15 @@
 Сделать вывод исходной строки, но каждое слово должно начинаться с заглавной буквы.
 Необходимо использовать написанную ранее функцию int_func().
 """
+
+
+def int_func(txt_input):
+    n = 0
+    txt_split = txt_input.split()
+    while n < len(txt_split):
+        txt_split[n] = txt_split[n].capitalize()
+        n += 1
+    return ' '.join(txt_split)
+
+
+print(int_func(txt_input=input('Enter text with latin lower case: ')))
