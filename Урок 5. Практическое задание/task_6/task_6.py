@@ -5,3 +5,21 @@
                                         Физкультура:   —   30(пр)   —
 Пример словаря: {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 """
+
+
+academics_dict = dict()
+academics_file = open('academics.txt', encoding='utf8')
+for ln in academics_file:
+    academics_list = ln.split(':')
+    academic_hours = 0
+    academics_list1 = academics_list[1].split(' ')
+    for n in academics_list1:
+        if n != '':
+            try:
+                academic_hours += int(''.join(n1 for n1 in n if n1.isdecimal()))
+            except ValueError:
+                continue
+    academics_dict.update({academics_list[0]: academic_hours})
+
+academics_file.close()
+print(academics_dict.copy())
