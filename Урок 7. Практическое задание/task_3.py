@@ -100,3 +100,68 @@ print(cell2.make_order(10))
 *****\n *****\n *****\n *****\n *****\n *****\n
 **********\n **********\n *****
 """
+
+
+class Cell:
+
+    def __init__(self, quantity):
+        self.quantity = quantity
+
+    def __add__(self, other):
+        return f'Sum of cells = {self.quantity + other.quantity}'
+
+    def __sub__(self, other):
+        dif = self.quantity - other.quantity
+        if dif > 0:
+            return f'Difference between cells = {dif}'
+        else:
+            return 'Difference is negative!'
+
+    def __truediv__(self, other):
+        return f'Division of cells = {self.quantity // other.quantity}'
+
+    def __mul__(self, other):
+        return f'Multiplication of cells = {self.quantity * other.quantity}'
+
+    def make_order(self, num):
+        result = ''
+        for _ in range(self.quantity // num):
+            for _ in range(num):
+                result = result + '*'
+            result = result + '\n'
+        for _ in range(self.quantity % num):
+            result = result + '*'
+        return result
+
+
+print('Creating cell objects')
+cell1 = Cell(30)
+cell2 = Cell(25)
+
+cell3 = Cell(10)
+cell4 = Cell(15)
+
+print()
+
+print('Adding')
+print(cell1 + cell2)
+
+print()
+
+print('Subtracting')
+print(cell2 - cell1)
+print(cell4 - cell3)
+
+print()
+
+print('Multiplying')
+print(cell2 * cell1)
+
+print()
+
+print('Dividing')
+print(cell1 / cell2)
+
+print('\nArranging cells in rows')
+print(cell1.make_order(5))
+print(cell2.make_order(10))

@@ -28,3 +28,51 @@
 8 10 12
 14 16 18
 """
+
+
+class Matrix:
+    value: list
+
+    def __init__(self, value: list):
+        self.value = value
+
+    def __add__(self, other: 'Matrix'):
+        try:
+            row_num = len(self.value)
+            item_num = len(self.value[0])
+
+            new_value = [
+                [
+                    self.value[row][idx] + other.value[row][idx]
+                    for idx in range(item_num)
+                ]
+                for row in range(row_num)
+            ]
+
+            return Matrix(new_value)
+        except IndexError:
+            print('ERROR! Matrix should be the same size!')
+            exit(1)
+
+    def __str__(self):
+        return "\n".join(
+            str(row).strip('[]').replace(',', '')
+            for row in self.value
+        )
+
+
+m1 = Matrix([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+])
+
+m2 = Matrix([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+])
+
+m_sum = m1 + m2
+
+print(m_sum)
